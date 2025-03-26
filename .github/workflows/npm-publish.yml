@@ -18,11 +18,11 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
 
-    # Node.js 20 설치
+    # Node.js 18 설치
     - name: Set up Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: 20
+        node-version: 18
 
     # SECRET_YML 파일 생성
     - name: Create .env file
