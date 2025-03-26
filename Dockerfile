@@ -1,4 +1,4 @@
-FROM node:20
+FROM node:18
 WORKDIR /sideeffect-front
 
 COPY package*.json ./
