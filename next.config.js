@@ -9,7 +9,7 @@ const nextConfig = {
       {
         protocol: "http",
         hostname: "api.sideeffect.site",
-        port: "80",
+        port: "",
         pathname: "/**",
       },
     ],
