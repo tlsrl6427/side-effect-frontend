@@ -47,22 +47,22 @@ jobs:
     - name: DockerHub Push
       run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.PROJECT_NAME }}
 
-  # deploy:
-  #   # needs를 통해 build job이 수행 성공시에 작업되도록 설정
-  #   needs: build
-  #   runs-on: ubuntu-latest
+  deploy:
+    # needs를 통해 build job이 수행 성공시에 작업되도록 설정
+    needs: build
+    runs-on: ubuntu-latest
 
-  #   steps:
-  #   # NCP 로그인 / docker image pull & run
-  #   - name: NCP login and docker image pull and run
-  #     uses: appleboy/ssh-action@master
-  #     with:
-  #       host: ${{ secrets.AWS_HOST }}
-  #       username: ${{ secrets.AWS_USERNAME }}
-  #       key: ${{ secrets.AWS_KEY }}
-  #       script: |
-  #         sudo docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-  #         sudo docker rm -f ${{ secrets.PROJECT_NAME }}
-  #         sudo docker pull ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.PROJECT_NAME }}
-  #         sudo docker run -d -p 3000:3000 --name ${{ secrets.PROJECT_NAME }} ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.PROJECT_NAME }}
-          # sudo docker image prune -f
+    steps:
+    # AWS 로그인 / docker image pull & run
+    - name: AWS login and docker image pull and run
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.AWS_HOST }}
+        username: ${{ secrets.AWS_USERNAME }}
+        key: ${{ secrets.AWS_KEY }}
+        script: |
+          sudo docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+          sudo docker rm -f ${{ secrets.PROJECT_NAME }}
+          sudo docker pull ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.PROJECT_NAME }}
+          sudo docker run -d -p 3001:3000 --name ${{ secrets.PROJECT_NAME }} ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.PROJECT_NAME }}
+          sudo docker image prune -f
