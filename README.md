@@ -3,11 +3,11 @@
 <h3>열정을 함께할 동료가 필요할 때, 사이드 이펙트</h3>
 <p>개발자, 디자이너 등 누구나 쉽게 프로젝트를 시작하고, 네트워킹할 수 있는 커뮤니티 플랫폼입니다</p>
 
-[서비스 구경하기](https://side-effect-frontend-dev.vercel.app/)
+[서비스 구경하기](http://sideeffect.site/)
 
 [팀 소개](https://github.com/Side-Effect-Team)
 
-[백엔드 레포](https://github.com/Side-Effect-Team/side-effect-backend)
+[백엔드 레포](https://github.com/tlsrl6427/side-effect-backend)
 
 <br>
 
