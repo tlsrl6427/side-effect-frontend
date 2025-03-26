@@ -5,5 +5,5 @@ COPY package*.json ./
 RUN npm install
 COPY . .
 
-# ENTRYPOINT [ "npm", "run", "dev" ]
-# EXPOSE 3000
+ENTRYPOINT [ "npm", "run", "dev" ]
+EXPOSE 3000
