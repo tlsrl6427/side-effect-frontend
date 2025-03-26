@@ -8,8 +8,8 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "http",
-        hostname: "sideeffect.site",
-        port: "8081",
+        hostname: "api.sideeffect.site",
+        port: "80",
         pathname: "/**",
       },
     ],

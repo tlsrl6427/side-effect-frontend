@@ -29,7 +29,7 @@ export default function HomePage({ data }: BestProjectType) {
 }
 
 export async function getStaticProps() {
-  const { data } = await axios.get("http://sideeffect.site:8081/api/free-boards/rank");
+  const { data } = await axios.get("http://api.sideeffect.site/api/free-boards/rank");
   return {
     props: { data },
   };
